@@ -1,0 +1,134 @@
+/* styles.css
+   Uso de selectores:
+   - id selector: #calculator-app, #screen
+   - class selectors: .btn, .operator, .number, .title, .screen
+   - element selector: button, h1, main
+*/
+
+/* Element selector: cuerpo del documento */
+body {
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  background: linear-gradient(180deg, #fffafc 0%, #fff1f8 100%);
+  margin: 0;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  color: #3b2b2b;
+}
+
+/* ID selector: contenedor principal */
+#calculator-app.container {
+  width: 320px;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(115, 80, 120, 0.13);
+  background: linear-gradient(180deg, #ffffff 0%, #fff6fb 100%);
+}
+
+/* Element selector: título */
+h1.title {
+  margin: 0 0 12px 0;
+  font-size: 20px;
+  text-align: center;
+  color: #5a2b5a;
+  letter-spacing: 0.4px;
+}
+
+/* ID selector para la pantalla */
+#screen.screen {
+  height: 60px;
+  border-radius: 10px;
+  border: 1px solid #f0cfe0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 12px;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 14px;
+  background: #fff;
+  box-shadow: inset 0 -2px 6px rgba(90,40,90,0.03);
+  color: #3b2b2b;
+  overflow-wrap: anywhere;
+}
+
+/* Clase para la sección de botones */
+.keypad {
+  display: grid;
+  gap: 10px;
+}
+
+/* Filas de botones */
+.row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+/* Estilo general de botones (class selector) */
+.btn {
+  border: 0;
+  padding: 12px;
+  font-size: 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(83, 50, 83, 0.08);
+  transition: transform 0.06s ease, box-shadow 0.06s;
+  user-select: none;
+}
+
+/* :active pseudo-class para feedback táctil */
+.btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 3px 8px rgba(83,50,83,0.06);
+}
+
+/* Botones numéricos (clase .number) */
+.btn.number {
+  background: linear-gradient(180deg, #fff 0%, #fffbff 100%);
+  border: 1px solid #f3e6f2;
+  color: #4a2a4a;
+}
+
+/* Botón 0 ancho (clase adicional .wide) */
+.btn.wide {
+  grid-column: span 2;
+}
+
+/* Botones de operador */
+.btn.operator {
+  background: linear-gradient(180deg, #ffd7f0 0%, #ffc9ef 100%);
+  color: #6a1a6a;
+  border: 1px solid #f2c7e8;
+}
+
+/* Botón limpiar (action) */
+.btn.action {
+  background: linear-gradient(180deg, #ffeef8 0%, #fff5fc 100%);
+  color: #8a3a6a;
+  border: 1px solid #fde7f4;
+  font-weight: 700;
+}
+
+/* Botón igual más llamativo */
+.btn.equals {
+  background: linear-gradient(180deg, #ff89c9 0%, #ff5fb0 100%);
+  color: #fff;
+  border: none;
+  font-weight: 700;
+}
+
+/* Botón alto si se necesita (clase .tall) */
+.btn.tall {
+  grid-row: span 2;
+}
+
+/* Responsive: reducir tamaño en pantallas pequeñas */
+@media (max-width: 360px) {
+  #calculator-app.container {
+    width: 92%;
+  }
+  .btn { padding: 10px; font-size: 16px; }
+  #screen { font-size: 20px; height: 56px; }
+}

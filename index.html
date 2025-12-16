@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Calculadora básica</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main id="calculator-app" class="container">
+    <h1 class="title">Calculadora básica</h1>
+
+    <!-- Pantalla: ID usado para manipulación desde JS -->
+    <div id="screen" class="screen" aria-live="polite" role="status">0</div>
+
+    <!-- Botonera: uso de elementos <button> (selector de elemento) y clases para estilos -->
+    <section class="keypad">
+      <!-- fila de operaciones y limpiar -->
+      <div class="row">
+        <button class="btn action" id="clear">C</button>
+        <button class="btn operator" data-op="/">÷</button>
+        <button class="btn operator" data-op="*">×</button>
+        <button class="btn operator" data-op="-">−</button>
+      </div>
+
+      <!-- números y suma / resultado -->
+      <div class="row">
+        <button class="btn number" data-num="7">7</button>
+        <button class="btn number" data-num="8">8</button>
+        <button class="btn number" data-num="9">9</button>
+        <button class="btn operator" data-op="+">+</button>
+      </div>
+
+      <div class="row">
+        <button class="btn number" data-num="4">4</button>
+        <button class="btn number" data-num="5">5</button>
+        <button class="btn number" data-num="6">6</button>
+        <button class="btn equals tall" id="equals">=</button>
+      </div>
+
+      <div class="row">
+        <button class="btn number" data-num="1">1</button>
+        <button class="btn number" data-num="2">2</button>
+        <button class="btn number" data-num="3">3</button>
+      </div>
+
+      <div class="row">
+        <button class="btn number wide" data-num="0">0</button>
+        <button class="btn number" data-num=".">.</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
